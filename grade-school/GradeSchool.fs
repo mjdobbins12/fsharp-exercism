@@ -14,4 +14,7 @@ let roster (school: School): string list =
     |> Map.toList
     |> List.collect (fun (_, students) -> List.sort students)
 
-let grade (number: int) (school: School): string list = failwith "You need to implement this function."
+let grade (number: int) (school: School): string list =
+    match Map.tryFind number school with
+    | Some x -> List.sort school.[number]
+    | None -> []
