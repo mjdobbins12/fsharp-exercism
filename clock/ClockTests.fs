@@ -32,7 +32,7 @@ let ``Hour rolls over continuously`` () =
     let clock = create 100 0
     display clock |> should equal "04:00"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Sixty minutes is next hour`` () =
     let clock = create 1 60
     display clock |> should equal "02:00"
