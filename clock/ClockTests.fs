@@ -37,42 +37,42 @@ let ``Sixty minutes is next hour`` () =
     let clock = create 1 60
     display clock |> should equal "02:00"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Minutes roll over`` () =
     let clock = create 0 160
     display clock |> should equal "02:40"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Minutes roll over continuously`` () =
     let clock = create 0 1723
     display clock |> should equal "04:43"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Hour and minutes roll over`` () =
     let clock = create 25 160
     display clock |> should equal "03:40"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Hour and minutes roll over continuously`` () =
     let clock = create 201 3001
     display clock |> should equal "11:01"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Hour and minutes roll over to exactly midnight`` () =
     let clock = create 72 8640
     display clock |> should equal "00:00"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Negative hour`` () =
     let clock = create -1 15
     display clock |> should equal "23:15"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Negative hour rolls over`` () =
     let clock = create -25 0
     display clock |> should equal "23:00"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Negative hour rolls over continuously`` () =
     let clock = create -91 0
     display clock |> should equal "05:00"
