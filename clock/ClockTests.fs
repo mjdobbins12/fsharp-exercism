@@ -77,7 +77,7 @@ let ``Negative hour rolls over continuously`` () =
     let clock = create -91 0
     display clock |> should equal "05:00"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Negative minutes`` () =
     let clock = create 1 -40
     display clock |> should equal "00:20"
