@@ -15,9 +15,11 @@ let create hours minutes =
     adjustMins minutes
     |> (fun (a, b) -> adjustedHrs (hours + a), b)
 
-let add minutes clock = failwith "You need to implement this function."
+let add minutes clock =
+    create (fst(clock)) (snd(clock) + minutes)
 
-let subtract minutes clock = failwith "You need to implement this function."
+let subtract minutes clock =
+    create (fst(clock)) (snd(clock) - minutes)
 
 let display clock =
     sprintf "%02i:%02i" (fst(clock)) (snd(clock))
