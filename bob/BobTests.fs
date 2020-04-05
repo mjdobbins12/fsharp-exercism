@@ -11,11 +11,11 @@ open Bob
 let ``Stating something`` () =
     response "Tom-ay-to, tom-aaaah-to." |> should equal "Whatever."
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Shouting`` () =
     response "WATCH OUT!" |> should equal "Whoa, chill out!"
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Shouting gibberish`` () =
     response "FCECDFCAAB" |> should equal "Whoa, chill out!"
 
