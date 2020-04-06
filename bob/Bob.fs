@@ -1,12 +1,20 @@
 ﻿module Bob
 
-open System.Text.RegularExpressions
+open System
 
-let (|RegexGroup|_|) pattern input =
-   let m = Regex.Match(input, pattern) 
-   if (m.Success) then Some m.Groups.[1].Value else None
+let (|Question|_|) (str: string) =
+   if str.EndsWith '?' then Some Question else None
+
+let (|Shout|_|) (str: string) =
+   let allCaps = str.ToCharArray() |> Seq.filter Char.IsLetter
+   if Seq.length allCaps > 0 && allCaps |> Seq.forall Char.IsUpper
+   then Some Shout
+   else None
 
 let response (input: string): string =
-    match input with
-    | a when a = input.ToUpper() -> "Whoa, chill out!"
+    match input.Trim() with
+    | "" -> "Fine. Be that way!"
+    | Question & Shout -> "Calm down, I know what I'm doing!"
+    | Question -> "Sure." 
+    | Shout -> "Whoa, chill out!"
     | _ -> "Whatever."
