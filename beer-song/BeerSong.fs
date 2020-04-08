@@ -12,7 +12,14 @@ let twoBottlesVerse =
         "Take one down and pass it around, 1 bottle of beer on the wall."
     ]
 
+let oneBottleVerse =
+    [
+        "1 bottle of beer on the wall, 1 bottle of beer.";
+        "Take it down and pass it around, no more bottles of beer on the wall."
+    ]
+
 let recite (startBottles: int) (takeDown: int) =
     match startBottles with
     | 2 -> twoBottlesVerse
+    | 1 -> oneBottleVerse
     | _ -> regularVerse startBottles

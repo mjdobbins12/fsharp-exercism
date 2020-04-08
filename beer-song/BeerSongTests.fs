@@ -28,7 +28,7 @@ let ``Verse with 2 bottles`` () =
           "Take one down and pass it around, 1 bottle of beer on the wall." ]
     recite 2 1 |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Verse with 1 bottle`` () =
     let expected = 
         [ "1 bottle of beer on the wall, 1 bottle of beer.";
