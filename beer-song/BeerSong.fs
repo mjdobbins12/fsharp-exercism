@@ -24,9 +24,14 @@ let noBottlesVerse =
         "Go to the store and buy some more, 99 bottles of beer on the wall."
     ]
 
-let recite (startBottles: int) (takeDown: int) =
-    match startBottles with
-    | 2 -> twoBottlesVerse
-    | 1 -> oneBottleVerse
-    | 0 -> noBottlesVerse
-    | _ -> regularVerse startBottles
+let rec recite (startBottles: int) (takeDown: int) =
+    let verse (startBottles: int) = 
+        match startBottles with
+        | 2 -> twoBottlesVerse
+        | 1 -> oneBottleVerse
+        | 0 -> noBottlesVerse
+        | _ -> regularVerse startBottles
+    
+    match takeDown with
+    | 1 -> verse startBottles
+    | _ -> verse startBottles @ [""] @ recite (startBottles - 1) (takeDown - 1)
