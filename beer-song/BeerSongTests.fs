@@ -35,14 +35,14 @@ let ``Verse with 1 bottle`` () =
           "Take it down and pass it around, no more bottles of beer on the wall." ]
     recite 1 1 |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Verse with 0 bottles`` () =
     let expected = 
         [ "No more bottles of beer on the wall, no more bottles of beer.";
           "Go to the store and buy some more, 99 bottles of beer on the wall." ]
     recite 0 1 |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``First two verses`` () =
     let expected = 
         [ "99 bottles of beer on the wall, 99 bottles of beer.";
