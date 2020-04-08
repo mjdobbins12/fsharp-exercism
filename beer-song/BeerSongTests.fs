@@ -21,7 +21,7 @@ let ``Last generic verse`` () =
           "Take one down and pass it around, 2 bottles of beer on the wall." ]
     recite 3 1 |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Verse with 2 bottles`` () =
     let expected = 
         [ "2 bottles of beer on the wall, 2 bottles of beer.";
