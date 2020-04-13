@@ -65,49 +65,49 @@ let ``Changes east to north`` () =
     let expected = create Direction.North (0, 0)
     move "L" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Facing north increments Y`` () =
     let robot = create Direction.North (0, 0)
     let expected = create Direction.North (0, 1)
     move "A" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Facing south decrements Y`` () =
     let robot = create Direction.South (0, 0)
     let expected = create Direction.South (0, -1)
     move "A" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Facing east increments X`` () =
     let robot = create Direction.East (0, 0)
     let expected = create Direction.East (1, 0)
     move "A" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Facing west decrements X`` () =
     let robot = create Direction.West (0, 0)
     let expected = create Direction.West (-1, 0)
     move "A" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Moving east and north from README`` () =
     let robot = create Direction.North (7, 3)
     let expected = create Direction.West (9, 4)
     move "RAALAL" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Moving west and north`` () =
     let robot = create Direction.North (0, 0)
     let expected = create Direction.West (-4, 1)
     move "LAAARALA" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Moving west and south`` () =
     let robot = create Direction.East (2, -7)
     let expected = create Direction.South (-3, -8)
     move "RRAAAAALA" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Moving east and north`` () =
     let robot = create Direction.South (8, 4)
     let expected = create Direction.North (11, 5)
