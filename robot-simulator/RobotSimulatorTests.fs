@@ -41,25 +41,25 @@ let ``Changes west to north`` () =
     let expected = create Direction.North (0, 0)
     move "R" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Changes north to west`` () =
     let robot = create Direction.North (0, 0)
     let expected = create Direction.West (0, 0)
     move "L" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Changes west to south`` () =
     let robot = create Direction.West (0, 0)
     let expected = create Direction.South (0, 0)
     move "L" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Changes south to east`` () =
     let robot = create Direction.South (0, 0)
     let expected = create Direction.East (0, 0)
     move "L" robot |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Changes east to north`` () =
     let robot = create Direction.East (0, 0)
     let expected = create Direction.North (0, 0)

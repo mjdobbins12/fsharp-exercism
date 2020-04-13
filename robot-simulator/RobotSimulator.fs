@@ -15,9 +15,13 @@ let move (instructions: string) robot =
         | Direction.South -> create Direction.West robot.position
         | Direction.West -> create Direction.North robot.position
 
+    let turnLeft =
+        turnRight >> turnRight >> turnRight
+
     let convertInstructions robot letter =
         match letter with
         | 'R' -> turnRight robot
+        | 'L' -> turnLeft robot
         | _ -> robot
 
     Seq.toList instructions
