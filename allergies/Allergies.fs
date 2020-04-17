@@ -2,7 +2,6 @@
 
 open System
 
-[<FlagsAttribute>]
 type Allergen =
     | Eggs = 1
     | Peanuts = 2
@@ -16,4 +15,8 @@ type Allergen =
 let allergicTo (codedAllergies: int) allergen =
     (enum<Allergen>(codedAllergies) &&& allergen) = allergen
 
-let list codedAllergies = failwith "You need to implement this function."
+let list (codedAllergies: int) =
+    Enum.GetValues(typeof<Allergen>)
+    |> Seq.cast<Allergen>
+    |> Seq.filter (fun x -> allergicTo codedAllergies x)
+    |> Seq.toList
