@@ -25,7 +25,7 @@ let ``Recognizes 1`` () =
           "   " ]
     convert rows |> should equal (Some "1")
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Unreadable but correctly sized inputs return ?`` () =
     let rows = 
         [ "   ";
